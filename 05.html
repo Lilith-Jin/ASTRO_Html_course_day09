@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    /* 每個裝置可以共用的抽出來寫 */
+    .main-header{
+      background-color: cadetblue;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    .container{
+      max-width: 1200px;
+      padding: 10px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo{
+      width: 100px;
+    }
+
+    .logo img{
+      width: 100%;
+      vertical-align: middle;
+    }
+
+    .main-nav a{
+      display: block;
+      text-decoration: none;
+    }
+    /* 桌機以下 */
+    @media screen and (max-width: 1199px){
+        .hb{
+        background-color: black;
+        width: 40px;
+        height: 40px;
+      }
+
+      .main-nav{
+        /* 選單點擊前先隱藏 */
+        /* display: none; */
+        position: absolute;
+        background-color:salmon;
+        width: 60%;
+        height: calc(100vh - 60px);
+        left: -80%;
+        top: 100%;
+        transition: left 1s;
+      }
+
+      .main-nav a{
+        padding: 20px;
+        border-bottom:1px solid black;
+      }
+      /* 勾選方塊 */
+      #menu-check{
+        /* position: absolute; */
+        position: fixed;
+        z-index: 10;
+      }
+      /* ~選擇同一層 */
+      #menu-check:checked ~ .main-header .main-nav{
+        /* display: block; */
+        left: 0;
+      }
+    }
+
+    /* 桌機 */
+    @media screen and (min-width: 1200px){
+        .hb{
+        display: none;
+      }
+
+      .main-nav{
+        display: flex;
+      }
+
+      .main-nav a{
+        padding: 10px 20px;
+        /* border-bottom:1px solid black; */
+      }
+
+      .main-nav a + a{
+        border-left: 1px solid #000;
+      }
+
+      /* 勾選方塊 */
+      #menu-check{
+        /* position: absolute; */
+        position: fixed;
+        z-index: 10;
+      }
+      /* ~選擇同一層 */
+      #menu-check:checked ~ .main-header .main-nav{
+        /* display: block; */
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox"  id="menu-check">
+
+  <header class="main-header">
+    <div class="container">
+      <!-- logo -->
+      <a href="#" class="logo">
+        <h1>
+          <img src="https://picsum.photos/200/80/?random=1">
+        </h1>
+      </a>
+      <!-- hambuger -->
+
+      <!-- label的for名稱要對input的id名稱 -->
+      <label for="menu-check" class="hb"></label>
+
+      <!-- 選單 -->
+      <nav class="main-nav">
+        <a href="#" class="link">link</a>
+        <a href="#" class="link">link</a>
+        <a href="#" class="link">link</a>
+        <a href="#" class="link">link</a>
+      </nav>
+    </div>   
+  </header>
+  
+  <div class="txt">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+  </div>
+</body>
+</html>
