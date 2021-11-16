@@ -13,6 +13,10 @@
     }
     .main-header{
       background-color: cadetblue;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
     }
     .container{
       max-width: 1200px;
@@ -38,12 +42,35 @@
     }
 
     .man-nav{
-      /* display: none; */
-      
+      /* 選單點擊前先隱藏 */
+      display: none;
+      position: absolute;
+      background-color:salmon;
+      width: 60%;
+      height: calc(100vh - 60px);
+      left: 0;
+      top: 100%;
+    }
+
+    .man-nav a{
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      border-bottom:1px solid black;
+    }
+    #menu-check{
+      position: absolute;
+      z-index: 10;
+    }
+    /* ~選擇同一層 */
+    #menu-check:checked ~ .main-header .man-nav{
+      display: block;
     }
   </style>
 </head>
 <body>
+  <input type="checkbox"  id="menu-check">
+
   <header class="main-header">
     <div class="container">
       <!-- logo -->
@@ -53,17 +80,29 @@
         </h1>
       </a>
       <!-- hambuger -->
-      <div class="hb"></div>
-    </div>
+
+      <label for="menu-check" class="hb"></label>
+      <!-- 選單 -->
+      <nav class="man-nav">
+        <a href="#" class="link">link</a>
+        <a href="#" class="link">link</a>
+        <a href="#" class="link">link</a>
+        <a href="#" class="link">link</a>
+      </nav>
+    </div>   
   </header>
-  <!-- 選單 -->
-  <nav class="man-nav">
-    <div class="linkgroup">
-      <a href="#" class="link">link</a>
-      <a href="#" class="link">link</a>
-      <a href="#" class="link">link</a>
-      <a href="#" class="link">link</a>
-    </div>
-  </nav>
+  
+  <div class="txt">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi numquam consectetur blanditiis soluta voluptatum fugit quidem ut qui nisi consequatur odit eaque, amet sed excepturi at necessitatibus dignissimos. Nobis.</p>
+  </div>
 </body>
 </html>
